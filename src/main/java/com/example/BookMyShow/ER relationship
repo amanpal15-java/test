@@ -1,0 +1,67 @@
+Table User {
+  user_id int [pk, increment]
+  user_name varchar
+  email varchar
+  phone_number varchar
+  city_id int [ref: > City.city_id]
+}
+
+Table City {
+  city_id int [pk, increment]
+  city_name varchar
+  state varchar
+}
+
+Table Movie {
+  movie_id int [pk, increment]
+  movie_name varchar
+  release_date date
+  summary varchar
+  // supporting_languages, cast_members, genres would be in join tables or arrays
+}
+
+Table Screen {
+  screen_id int [pk, increment]
+  screen_name varchar
+  // cinema_id int [ref: > Cinema.cinema_id] // Uncomment if you have Cinema
+}
+
+Table Seat {
+  seat_id int [pk, increment]
+  screen_id int [ref: > Screen.screen_id]
+  row_id int
+  column_id int
+  seat_status varchar
+  seat_type varchar
+}
+
+Table MovieShow {
+  show_id int [pk, increment]
+  movie_id int [ref: > Movie.movie_id]
+  screen_id int [ref: > Screen.screen_id]
+  show_time time
+}
+
+Table ShowSeats {
+  show_seat_id int [pk, increment]
+  show_id int [ref: > MovieShow.show_id]
+  seat_id int [ref: > Seat.seat_id]
+  seat_status varchar
+  price double
+}
+
+Table Booking {
+  booking_id int [pk, increment]
+  show_id int [ref: > MovieShow.show_id]
+  user_id int [ref: > User.user_id]
+  status varchar
+  total_amount double
+  txn_id int [ref: > Transaction.txn_id]
+}
+
+Table Transaction {
+  txn_id int [pk, increment]
+  payment_status varchar
+  txn_timestamp timestamp
+  amount double
+}
