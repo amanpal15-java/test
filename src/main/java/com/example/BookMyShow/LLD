@@ -1,0 +1,100 @@
+Requirements :
+
+Admin can add/remove movies, add/remove/cancel movie shows, register new cinema
+User can search/browse movies/cinema based on various criterias without login
+To create and complete booking, user needs to signup if acc doesn’t exist.
+Users should be notified on events like Booking confirm/cancelled/show cancellation etc to his preferred modes of communication.
+User should be able to choose mode of payment(UPI, Netbanking, CC..)
+
+Movie
+-movieId
+-movieName
+-List<String> genre
+-List<String> castMembers
+-Language
+-releaseDate
+
+
+**************
+
+User and Admin can follow a factory pattern
+User
+-userId
+-userName
+-email
+-phoneNumber
+-city (so we can only show him movie in city)
+-pinCode (in order of pincode nearest First)
+
+
+Admin
+-adminId
+
+**************
+
+Cinema
+-cinemaId
+-List<Theatre>
+-List<Shows>
+-city
+-pinCode
+
+Screen
+-screenId
+-List<Seats>
+-List<Show>
+
+Seat
+-screenId
+-seatId
+-rowId
+-columnId
+-seatStatus
+-seatType
+
+MovieShow
+-showId
+-showTime
+-movieId
+-screenId
+-List<showSeats>
+
+
+showSeats
+-showSeatId
+-showId
+-seatId
+-seatStatus
+-price
+
+Booking
+-bookingId
+-showId
+-List<ShowSeats> bookedShow
+-BookingStatus status
+-totalAmount
+-txnId
+-userId
+
+
+Transaction
+-txnId
+-PaymentStatus
+-txnTimeStamp
+-amount
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

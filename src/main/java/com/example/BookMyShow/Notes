@@ -1,0 +1,61 @@
+Variable become constant when we use FINAL keyword and are assigned only once in memory by the STATIC keyword.
+
+
+What’s Expected in a Machine Coding Round
+ Core Functionality
+ Implement the main business flow (e.g., movie search, seat selection, booking, cancellation).
+ Focus on the most important entities and relationships.
+ Clean Code & Structure
+ Use clear, modular code (entities, repositories, services, controllers).
+ Follow best practices (naming, separation of concerns, DTOs if needed).
+ Database Integration
+ Use an in-memory database (H2) for quick setup and demo.
+ RESTful APIs
+ Expose endpoints for main flows (search, book, cancel, etc.).
+ Use meaningful request/response models.
+ Sample Data
+ Pre-populate some data for demo/testing.
+ Minimal Boilerplate
+ Don’t over-engineer (skip security, advanced error handling, etc. unless asked).
+
+
+ What to Prioritize
+ Must-Have
+ Entities: Only the most relevant (User, Movie, Cinema, Screen, Seat, MovieShow, Booking, Transaction).
+ Enums: For statuses and types.
+ Repositories: JPA interfaces.
+ Services: Business logic for booking, searching.
+ Controllers: REST endpoints for booking flow.
+ Sample Data: CommandLineRunner or similar.
+ Nice-to-Have (if time permits)
+ DTOs: For cleaner API models.
+ Unit Tests: For service layer.
+ Swagger/OpenAPI: For API documentation.
+ What to Skip (unless asked)
+ Authentication/Authorization
+ Advanced error handling
+ UI/frontend
+ Messaging/notifications
+
+
+ Recommended Stack for Speed
+ Spring Boot (with Spring Web, Spring Data JPA, Lombok)
+ H2 Database (in-memory, no setup required)
+ Java 17+
+ Suggested Approach
+ Start with Enums and Entities (keep them simple, use Lombok for boilerplate)
+ Create Repositories
+ Implement Service Layer (focus on booking logic)
+ Expose REST APIs
+ Add Sample Data Loader
+ Test with Postman/curl
+ Summary Table
+ | Layer | What to Implement | Why? |
+ |---------------|----------------------------------|-----------------------------|
+ | Model | Entities + Enums | Core data structure |
+ | Repository | JPA interfaces | Data access |
+ | Service | Booking/search logic | Business logic |
+ | Controller | REST endpoints | API access |
+ | Data Loader | Pre-populate data | Easy demo/testing |
+
+
