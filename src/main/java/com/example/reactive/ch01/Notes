@@ -1,0 +1,89 @@
+🌟 1. Motivation for Reactive Systems : Handles Massive Concurrency( thousands of millions of request), low latency responses (real time UX), High Availabilty
+Traditional architectures struggle to scale efficiently, especially when synchronous/blocking operations are used heavily.
+
+🔧 2. Limitations of Traditional Architectures :
+      Synchronous/Blocking: (Solved by virtual threads)
+            Threads are blocked during I/O or processing, consuming system resources unnecessarily.
+            You need a 1:1 mapping between requests and threads, limiting scalability (thread per request model)
+      Tightly Coupled Systems:
+            Failures propagate easily and recovery is hard.
+            Poor fault isolation, brittle under load or failure conditions.
+
+Key Takeaways:
+        Traditional systems struggle with scalability and resilience under load.
+        Reactive systems use asynchronous, non-blocking communication to handle more work with fewer resources.
+
+
+
+🧭 Phase 1: Foundations of Spring & Reactive (Beginner Level)
+📘 Book: Spring in Action, 6th Edition
+🔍 Chapters to Focus On:
+Spring Boot fundamentals
+
+Reactive Spring: WebFlux, Mono and Flux
+
+Intro to reactive endpoints
+
+🛠️ Practice:
+Build a small app like "Reactive Todo List"
+
+Use:
+
+@RestController with Mono and Flux
+
+In-memory data store (Map or List)
+
+
+
+
+🧭 Phase 2: Understanding Project Reactor (Beginner → Intermediate)
+📘 Book: Reactive Spring by Josh Long
+🔍 Topics to Focus On:
+Project Reactor deep dive (Mono, Flux, operators)
+
+Error handling, retries, timeouts
+
+WebFlux routing: annotation-based & functional
+
+R2DBC (Reactive DB), MongoDB, Kafka (if needed)
+
+🛠️ Practice Project:
+Reactive Book Catalog
+
+Endpoints:
+
+/books (get all books – Flux)
+
+/books/{id} (get one – Mono)
+
+/books/genre/{genre} (query by type – Flux)
+
+Use reactive DB (MongoDB or Postgres with R2DBC)
+
+
+
+
+
+🧭 Phase 3: Reactive Internals & Performance (Intermediate Level)
+📘 Book: Hands-On Reactive Programming in Spring 5
+🔍 Topics to Deep Dive:
+How Schedulers work (parallel, elastic, boundedElastic)
+
+Threading in Reactor (which thread runs what)
+
+Backpressure and flow control
+
+Custom reactive operators
+
+Integration with WebClient
+
+🛠️ Practice Project:
+Reactive Weather Dashboard
+
+Integrate with public weather API using WebClient
+
+Cache responses reactively
+
+Handle timeouts, errors gracefully
+
+Add pagination using Flux.window()

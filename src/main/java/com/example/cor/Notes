@@ -1,0 +1,20 @@
+The Chain of Responsibility pattern is useful when multiple objects can handle a request,
+but the handler isn't known in advance.
+
+🧠 Interview Tips
+✨ Mention extensibility: “We can add new handlers without modifying existing ones.”
+🧩 Highlight decoupling: “Each handler knows only about the next, not the whole pipeline.”
+🔁 Support dynamic handler order if needed: “We can reorder handlers based on user role or configuration.”
+
+Extensibility: "New steps like promo code or EMI handler can be plugged in easily."
+Fail-fast design: "If any step fails, transaction is halted."
+Encapsulation: "Each step has its own responsibility. No giant method."
+Open/Closed Principle: "No need to modify existing code when adding new validation."
+
+
+🔥 TOP CASES TO USE CHAIN OF RESPONSIBILITY IN LLD INTERVIEWS :
+
+----> User Validation : Cases in which we have to validate api and user we can add multiple handlers
+For Example : Username and password and email check , age validator , terms and condition validator.
+
+

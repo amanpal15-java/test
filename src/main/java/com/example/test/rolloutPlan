@@ -1,0 +1,9 @@
+merge release ppsl code --> ocl
+remove useless logs
+make one env ready for this.
+remove useless code which we will not be using.
+Have to include code in which we can configure channels for which we have to ignore SQ.
+Identify channels which we can migrate in phase one :
+    1. refund channels for which we don't have bank SQ (have to exclude bank which have offline refund)
+    2. Less impact channels UPI (target them firstly)
+    3.
